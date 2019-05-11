@@ -25,6 +25,15 @@ const Button = styled.div`
   background-color: ${props => props.theme.successColor};
 `;
 
+const Container = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+  ${Card} {
+    background-color: blue;
+  }
+`;
+
 const Form = () => (
   <Card>
     <Button>Hello</Button>
@@ -35,10 +44,4 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
-`;
-
-const Container = styled.div`
-  height: 100vh;
-  width: 100%;
-  background-color: grey;
 `;

@@ -1,4 +1,6 @@
-##createGlobalStyle
+## 복습용
+
+## createGlobalStyle
 
 ```javascript
 const GlobalStyle = createGlobalStyle`
@@ -9,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 ```
 
-##Styled() or styled.element.attrs -> adding attributes
+## Styled() or styled.element.attrs -> adding attributes
 
 ```javascript
 const Anchor = styled(Button.withComponent("a"))`
