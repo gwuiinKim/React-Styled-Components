@@ -1,31 +1,35 @@
 import React from "react";
-import styled, { css, createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import theme from "./theme";
 
 function App() {
   return (
-    <Container>
-      <GlobalStyle />
-      <Input placeholder="hello" />
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <GlobalStyle />
+        <Form />
+      </Container>
+    </ThemeProvider>
   );
 }
 
 export default App;
 
-const awesomeCard = css`
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
+const Card = styled.div`
+  background-color: red;
 `;
 
-const Input = styled.input.attrs({
-  required: true
-})`
-  border: none;
-  ${awesomeCard}
+const Button = styled.div`
+  border-radius: 30px;
+  padding: 25px 15px;
+  background-color: ${props => props.theme.successColor};
 `;
 
+const Form = () => (
+  <Card>
+    <Button>Hello</Button>
+  </Card>
+);
 const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
