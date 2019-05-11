@@ -1,3 +1,63 @@
+##createGlobalStyle
+
+```javascript
+const GlobalStyle = createGlobalStyle`
+  body {
+    padding: 0;
+    margin: 0;
+  }
+`;
+```
+
+##Styled() or styled.element.attrs -> adding attributes
+
+```javascript
+const Anchor = styled(Button.withComponent("a"))`
+  text-decoration: none;
+`;
+```
+
+we can also use mixin here!
+
+##animation
+
+```js
+    import keyframes
+
+
+```
+
+## mixin
+
+나중에 쓰려고 encapsulate
+
+```js
+const awesomeCard = css`
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+`;
+```
+
+## theme
+
+css의 변수를 저장해놓는 곳.(폰트 크기, 배경색.. 등등)
+
+```js
+const theme = {
+  mainColor: "#3498db",
+  dangerColor: "#e74c3c",
+  successColor: "#2ecc71"
+};
+
+export default theme;
+```
+
+App.js에서 import 해야함.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
