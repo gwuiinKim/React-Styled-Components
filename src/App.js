@@ -1,16 +1,31 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 function App() {
   return (
-    <div>
+    <Container>
+      <GlobalStyle />
       <Button>Hello</Button>
       <Button danger>Hello</Button>
-    </div>
+      <Anchor href="https://www.google.com/">Go to Google</Anchor>
+    </Container>
   );
 }
 
 export default App;
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    padding: 0;
+    margin: 0;
+  }
+`;
+
+const Container = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+`;
 
 const Button = styled.button`
   border-radius: 50px;
@@ -25,4 +40,8 @@ const Button = styled.button`
     outline: none;
   }
   background-color: ${props => (props.danger ? "#e74c3c" : "#2ecc71")};
+`;
+
+const Anchor = styled(Button.withComponent("a"))`
+  text-decoration: none;
 `;
