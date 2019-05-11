@@ -1,20 +1,30 @@
 import React from "react";
-import styled, { css, createGlobalStyle, keyframes } from "styled-components";
+import styled, { css, createGlobalStyle } from "styled-components";
 
 function App() {
   return (
     <Container>
       <GlobalStyle />
-      <Button>Hello</Button>
-      <Button danger rotationTime={1}>
-        Danger
-      </Button>
-      <Anchor href="https://www.google.com/">Go to Google</Anchor>
+      <Input placeholder="hello" />
     </Container>
   );
 }
 
 export default App;
+
+const awesomeCard = css`
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+`;
+
+const Input = styled.input.attrs({
+  required: true
+})`
+  border: none;
+  ${awesomeCard}
+`;
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,39 +37,4 @@ const Container = styled.div`
   height: 100vh;
   width: 100%;
   background-color: grey;
-`;
-
-const Button = styled.button`
-  border-radius: 50px;
-  padding: 5px;
-  min-width: 120px;
-  color: white;
-  font-weight: 600;
-  -webkit-appearance: none;
-  cursor: pointer;
-  &:active,
-  &:focus {
-    outline: none;
-  }
-  background-color: ${props => (props.danger ? "#e74c3c" : "#2ecc71")};
-  ${props => {
-    if (props.danger) {
-      return css`
-        animation: ${rotation} ${props.rotationTime}s linear infinite;
-      `;
-    }
-  }}
-`;
-
-const Anchor = styled(Button.withComponent("a"))`
-  text-decoration: none;
-`;
-
-const rotation = keyframes`
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
 `;
