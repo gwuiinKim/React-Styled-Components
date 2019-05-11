@@ -1,5 +1,30 @@
 ## 복습용
 
+styled component를 사용하면
+React, React Native 에서
+css로 스타일링을 할 수 있게 된다!
+
+## Extra
+
+https://github.com/nomadcoders/styled-awesomeness/blob/fdb5d0d7ca29ab83dc4519c03ed76ab37a9d5c34/extras.md
+
+## nesting
+
+```js
+const Card = styled.div`
+  background-color: red;
+`;
+
+const Container = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+  ${Card} {
+    background-color: blue;
+  }
+`;
+```
+
 ## createGlobalStyle
 
 ```javascript
@@ -21,7 +46,7 @@ const Anchor = styled(Button.withComponent("a"))`
 
 we can also use mixin here!
 
-##animation
+## animation
 
 ```js
     import keyframes
